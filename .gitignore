@@ -1,0 +1,27 @@
+# Compilados Java
+*.class
+
+# Logs
+*.log
+
+# Arquivos temporários
+*.tmp
+*.swp
+
+# Pasta de build (caso use futuramente)
+target/
+bin/
+out/
+
+# VS Code (configuração local)
+.vscode/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de execução
+*.jar
+
+# Dados de teste (se não forem obrigatórios)
+data/*.dat
