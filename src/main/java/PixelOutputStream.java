@@ -2,8 +2,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.DataOutputStream;
 
-public class PixelOutputStream
-        extends OutputStream {
+public class PixelOutputStream extends OutputStream {
 
     private OutputStream out;
 
@@ -18,16 +17,20 @@ public class PixelOutputStream
         out.write(b);
     }
 
-    public void writePixel(Pixel pixel)
-            throws IOException {
+    public void writePixels(Pixel[] pixels) throws IOException {
 
-        DataOutputStream dos =
-                new DataOutputStream(out);
+    DataOutputStream dos = new DataOutputStream(out);
 
-        dos.writeInt(pixel.getX());
-        dos.writeInt(pixel.getY());
-        dos.writeUTF(pixel.getCor());
+    // envia quantidade de pixels
+    dos.writeInt(pixels.length);
 
-        dos.flush();
+    for (Pixel p : pixels) {
+
+        dos.writeInt(p.getX());
+        dos.writeInt(p.getY());
+        dos.writeUTF(p.getCor());
     }
+
+    dos.flush();
+}
 }

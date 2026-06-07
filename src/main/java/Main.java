@@ -1,29 +1,6 @@
 import java.io.FileOutputStream;
-public class TesteLeitura {
+import java.io.FileInputStream;
 
-    public static void main(String[] args) {
-
-        try {
-
-            FileInputStream fis =
-                    new FileInputStream("pixels.dat");
-
-            PixelInputStream pis =
-                    new PixelInputStream(fis);
-
-            Pixel pixel = pis.readPixel();
-
-            System.out.println("X: " + pixel.getX());
-            System.out.println("Y: " + pixel.getY());
-            System.out.println("Cor: " + pixel.getCor());
-
-            fis.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-}
 
 public class Main {
 
@@ -31,7 +8,26 @@ public class Main {
 
         try {
 
-            Pixel pixel = new Pixel(10, 5, "AZUL");
+            Pixel[] pixels = {
+
+    new Pixel(2,1,"VERMELHO"),
+    new Pixel(3,1,"VERMELHO"),
+    new Pixel(4,1,"VERMELHO"),
+
+    new Pixel(1,2,"VERMELHO"),
+    new Pixel(5,2,"VERMELHO"),
+
+    new Pixel(2,3,"AZUL"),
+    new Pixel(4,3,"AZUL"),
+
+    new Pixel(3,4,"VERDE"),
+
+    new Pixel(1,5,"AMARELO"),
+    new Pixel(2,5,"AMARELO"),
+    new Pixel(3,5,"AMARELO"),
+    new Pixel(4,5,"AMARELO"),
+    new Pixel(5,5,"AMARELO")
+};
 
             FileOutputStream fos =
                     new FileOutputStream("pixels.dat");
@@ -39,11 +35,11 @@ public class Main {
             PixelOutputStream pos =
                     new PixelOutputStream(fos);
 
-            pos.writePixel(pixel);
+            pos.writePixels(pixels);
 
             fos.close();
 
-            System.out.println("Pixel gravado!");
+            System.out.println("Pixel Art gravada com sucesso!");
 
         } catch (Exception e) {
             e.printStackTrace();

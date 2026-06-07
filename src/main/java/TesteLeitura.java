@@ -12,15 +12,19 @@ public class TesteLeitura {
             PixelInputStream pis =
                     new PixelInputStream(fis);
 
-            Pixel pixel = pis.readPixel();
-
-            System.out.println("X: " + pixel.getX());
-            System.out.println("Y: " + pixel.getY());
-            System.out.println("Cor: " + pixel.getCor());
+            Pixel[] pixels =
+                    pis.readPixels();
 
             fis.close();
 
+            PixelArtViewer.mostrar(
+                    pixels,
+                    10,
+                    10
+            );
+
         } catch (Exception e) {
+
             e.printStackTrace();
         }
     }

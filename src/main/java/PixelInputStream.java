@@ -18,16 +18,23 @@ public class PixelInputStream
         return in.read();
     }
 
-    public Pixel readPixel()
-            throws IOException {
+    public Pixel[] readPixels() throws IOException {
 
-        DataInputStream dis =
-                new DataInputStream(in);
+    DataInputStream dis = new DataInputStream(in);
+
+    int quantidade = dis.readInt();
+
+    Pixel[] pixels = new Pixel[quantidade];
+
+    for (int i = 0; i < quantidade; i++) {
 
         int x = dis.readInt();
         int y = dis.readInt();
         String cor = dis.readUTF();
 
-        return new Pixel(x, y, cor);
+        pixels[i] = new Pixel(x, y, cor);
     }
+
+    return pixels;
+}
 }
