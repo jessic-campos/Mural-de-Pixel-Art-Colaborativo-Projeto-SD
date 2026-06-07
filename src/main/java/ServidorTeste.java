@@ -18,12 +18,18 @@ public class ServidorTeste {
                 new PixelInputStream(
                         cliente.getInputStream());
 
-        Pixel pixel = pis.readPixel();
+        Pixel[] pixels = pis.readPixels();
 
-        System.out.println(
-                pixel.getX() + " "
-                        + pixel.getY() + " "
-                        + pixel.getCor());
+        System.out.println("Pixels recebidos:");
+
+        for (Pixel pixel : pixels) {
+
+            System.out.println(
+                    pixel.getX() + " "
+                    + pixel.getY() + " "
+                    + pixel.getCor()
+            );
+        }
 
         cliente.close();
         server.close();
