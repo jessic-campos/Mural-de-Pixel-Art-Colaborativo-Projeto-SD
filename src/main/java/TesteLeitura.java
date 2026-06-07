@@ -1,4 +1,5 @@
-import java.io.FileOutputStream;
+import java.io.FileInputStream;
+
 public class TesteLeitura {
 
     public static void main(String[] args) {
@@ -18,32 +19,6 @@ public class TesteLeitura {
             System.out.println("Cor: " + pixel.getCor());
 
             fis.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-}
-
-public class Main {
-
-    public static void main(String[] args) {
-
-        try {
-
-            Pixel pixel = new Pixel(10, 5, "AZUL");
-
-            FileOutputStream fos =
-                    new FileOutputStream("pixels.dat");
-
-            PixelOutputStream pos =
-                    new PixelOutputStream(fos);
-
-            pos.writePixel(pixel);
-
-            fos.close();
-
-            System.out.println("Pixel gravado!");
 
         } catch (Exception e) {
             e.printStackTrace();
