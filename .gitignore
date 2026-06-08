@@ -8,12 +8,12 @@
 *.tmp
 *.swp
 
-# Pasta de build (caso use futuramente)
+# Pasta de build
 target/
 bin/
 out/
 
-# VS Code (configuração local)
+# VS Code
 .vscode/
 
 # Sistema operacional
@@ -22,6 +22,3 @@ Thumbs.db
 
 # Arquivos de execução
 *.jar
-
-# Dados de teste (se não forem obrigatórios)
-data/*.dat
