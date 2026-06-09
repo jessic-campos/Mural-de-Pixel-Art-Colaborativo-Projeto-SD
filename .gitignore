@@ -1,24 +1,17 @@
-# Compilados Java
+# Maven
+target/
 *.class
 
-# Logs
-*.log
-
-# Arquivos temporários
-*.tmp
-*.swp
-
-# Pasta de build
-target/
-bin/
-out/
-
-# VS Code
+# IDEs
+.idea/
 .vscode/
+*.iml
+*.iws
+*.ipr
+.classpath
+.project
+.settings/
 
-# Sistema operacional
+# OS
 .DS_Store
 Thumbs.db
-
-# Arquivos de execução
-*.jar
